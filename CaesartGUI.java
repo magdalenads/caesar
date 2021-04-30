@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.event.*;
+
 public class CaesartGUI extends JFrame {
     // Anfang Attribute
     private JLabel jLKlartext = new JLabel();
@@ -109,6 +110,11 @@ public class CaesartGUI extends JFrame {
         char[] klartext = caesar.entschluesseln(geheimtext, key);
         String lText = String.valueOf(klartext);
         jTAKlartext.setText(lText);
+    }
+
+    public static void main(String[] args) {
+        CaesartGUI caesartGUI = new CaesartGUI();
+        caesartGUI.setVisible(true);
     }
 
 }

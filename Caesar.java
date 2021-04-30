@@ -1,9 +1,5 @@
-
 /**
  * Die Caesar-Verschlüsselung
- *
- * @author Achim Kassemeier
- * @version 10.04.2021
  */
 public class Caesar
 {
@@ -64,4 +60,9 @@ public class Caesar
 
         return klartext;
     }
+
+    public static void main(String[] args) {
+        System.out.println("Hallo");
+    }
+
 }
