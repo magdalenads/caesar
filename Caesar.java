@@ -5,7 +5,7 @@ public class Caesar {
     public Caesar() {
         String text = "Reglvmglx er Gmgivs! Mgl, iyiv sfivwxiv Fijilpwlefiv, lefi iygl rmglx zivkiwwir yrh aimß zsr iyviv Peki. Lepxix rsgl imri aimpi wxerh yrh zivxveyx eyj iyvi Wxeivoi. Wglsr feph aivhir aimxivi Xvyttir dy iygl wxsßir, daim Pikmsrir wmrh fivimxw eyj hiq Aik. Kemyw Nypmyw Geiwev";
         char[] geheimtext = text.toCharArray();
-        haeufigkeitsanalyse(geheimtext);
+        // haeufigkeitsanalyse(geheimtext);
     }
 
     public int[] haeufigkeitsanalyse(char[] geheimtext) {
