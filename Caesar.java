@@ -60,7 +60,9 @@ public class Caesar {
     }
 
     public static void main(String[] args) {
-        System.out.println("Hallo");
+        Caesar caesar = new Caesar();
+        char[] eingabe = "Ich will mal die Buchstanben zaehlen, die in diesem Text vorkommen.".toCharArray();
+        int[] haeufigkeitsanalyse = caesar.haeufigkeitsanalyse(eingabe);
+        caesar.analyseAusgabe(haeufigkeitsanalyse);
     }
-
 }
