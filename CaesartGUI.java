@@ -13,6 +13,7 @@ public class CaesartGUI extends JFrame {
     private JTextArea jTAGeheimtext = new JTextArea("");
     private JButton jBcodieren = new JButton();
     private JButton jBdecode = new JButton();
+    private JButton jBfrequency = new JButton();
     private JLabel jLkey1 = new JLabel();
     private JLabel jLkey2 = new JLabel();
     private JTextField jTkey1= new JTextField();
@@ -83,6 +84,16 @@ public class CaesartGUI extends JFrame {
                 }
             });
         cp.add(jBdecode);
+
+        jBfrequency.setBounds(152, 210, 150, 25);
+        jBfrequency.setText("Häufigkeitsanalyse");
+        jBfrequency.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                jBfrequency_ActionPerformed(evt);
+            }
+        });
+        cp.add(jBfrequency);
+
         jLAnleitug.setBounds(24, 248, 319, 16);
         jLAnleitug.setText("Texte ohne Leerzeichen eingeben");
         jLAnleitug.setFont(new Font("MS Sans Serif", Font.PLAIN, 13));
@@ -110,6 +121,11 @@ public class CaesartGUI extends JFrame {
         char[] klartext = caesar.entschluesseln(geheimtext, key);
         String lText = String.valueOf(klartext);
         jTAKlartext.setText(lText);
+    }
+
+    public void jBfrequency_ActionPerformed(ActionEvent evt) {
+        char[] geheimtext = jTAGeheimtext.getText().toCharArray();
+        caesar.analyseAusgabe(caesar.haeufigkeitsanalyse(geheimtext));
     }
 
     public static void main(String[] args) {
