@@ -24,12 +24,14 @@ public class Caesar {
         }
     }
 
-    /* public int prozentAusgabe(int[] buchstabenzaehler, ){
-    for (int ascii=0; ascii < buchstabenzaehler.length; ascii++) {
-    int prozent = ((buchstabenzaehler[ascii] * 100)/textlaenge);
-
+    public int[] prozentBerechnung(int[] buchstabenzaehler, char[] geheimtext) {
+        int[] prozentzahlen = new int[128];
+        for (int ascii = 0; ascii < buchstabenzaehler.length; ascii++) {
+            int prozent = ((buchstabenzaehler[ascii] * 100) / geheimtext.length);
+            prozentzahlen[ascii] = prozent;
+        }
+        return prozentzahlen;
     }
-    } */
 
     public char[] verschluesseln(char[] klartext, int schluessel) {
         char[] geheimtext = new char[klartext.length];
@@ -63,6 +65,7 @@ public class Caesar {
         Caesar caesar = new Caesar();
         char[] eingabe = "Ich will mal die Buchstanben zaehlen, die in diesem Text vorkommen.".toCharArray();
         int[] haeufigkeitsanalyse = caesar.haeufigkeitsanalyse(eingabe);
-        caesar.analyseAusgabe(haeufigkeitsanalyse);
+        int[] prozentzahlen = caesar.prozentBerechnung(haeufigkeitsanalyse, eingabe);
+        caesar.analyseAusgabe(prozentzahlen);
     }
 }
